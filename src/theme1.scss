@@ -82,6 +82,33 @@ $tghotel-theme: mat-light-theme($tghotel-primary, $tghotel-accent, $tghotel-warn
 @include navtabs-component-theme($tghotel-theme);
 
 
+$tg-typography: mat-typography-config(
+  $font-family:   'Rubik, sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $display-3:     mat-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $display-2:     mat-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $display-1:     mat-typography-level(34px, 40px, 400),
+  $headline:      mat-typography-level(97px, 32px, 400),
+  $title:         mat-typography-level(61px, 0px, 500),
+  $subheading-2:  mat-typography-level(48px, 0.25px, 400),
+  $subheading-1:  mat-typography-level(34px, .25px, 400),
+  $body-2:        mat-typography-level(14px, .25px, 500),
+  $body-1:        mat-typography-level(16px, .5px, 400),
+  $caption:       mat-typography-level(12px, 1.25px, 400),
+  $button:        mat-typography-level(14px, 1.25px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input:         mat-typography-level(inherit, 1.125, 400)
+);
+@include mat-base-typography($tg-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($tg-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($tg-typography);
+
+@include mat-core($tg-typography);
+
 .mat-list-option:hover,
 .mat-list-option.mat-list-item-focus,
 .mat-nav-list .mat-list-item:hover,
