@@ -1,0 +1,91 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$hotel-primary: (
+    50 : #eaf5ea,
+    100 : #c9e7cb,
+    200 : #a6d7a8,
+    300 : #82c785,
+    400 : #67bb6a,
+    500 : #4caf50,
+    600 : #45a849,
+    700 : #3c9f40,
+    800 : #339637,
+    900 : #248627,
+    A100 : #c5ffc7,
+    A200 : #92ff95,
+    A400 : #5fff64,
+    A700 : #46ff4b,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+  )
+);
+
+
+$hotel-accent: (
+    50 : #fff5f2,
+    100 : #ffe6de,
+    200 : #ffd5c8,
+    300 : #ffc4b2,
+    400 : #ffb8a2,
+    500 : #ffab91,
+    600 : #ffa489,
+    700 : #ff9a7e,
+    800 : #ff9174,
+    900 : #ff8062,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffefeb,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+  )
+);
+
+
+$tghotel-primary: mat-palette($hotel-primary, 500, 200, 700);
+$tghotel-accent:  mat-palette($hotel-accent, 200, 100, 500);
+
+$tghotel-warn:    mat-palette($mat-red);
+
+$tghotel-theme: mat-light-theme($tghotel-primary, $tghotel-accent, $tghotel-warn);
+
+@import './app/navigation/navtabs/navtabs.component.theme.scss';
+@include angular-material-theme($tghotel-theme);
+@include navtabs-component-theme($tghotel-theme);
+
+
+.mat-list-option:hover,
+.mat-list-option.mat-list-item-focus,
+.mat-nav-list .mat-list-item:hover,
+.mat-nav-list .mat-list-item.mat-list-item-focus {
+    background-color: mat-color($tghotel-primary, 200);
+    color: mat-color($tghotel-primary)
+}

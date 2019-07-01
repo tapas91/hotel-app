@@ -1,0 +1,16 @@
+.container{
+    background: url(/assets/images/beach.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.book-now-container{
+    padding: 35px 115px;
+}
+
+.book-now-button {
+    width: 170px;
+    color: white;
+    border: 1px solid white;
+    text-transform: uppercase;
+}
