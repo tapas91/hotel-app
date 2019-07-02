@@ -1,3 +1,8 @@
-.sidenav-list span{
+.sidenav-list {
     padding-left: 8px;
+    
+}
+
+mat-icon {
+    padding: 8px;
 }
